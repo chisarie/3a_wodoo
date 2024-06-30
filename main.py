@@ -122,6 +122,7 @@ if __name__ == "__main__":
         benefit that are invested in the stock market as above.
         At the end of the 40 years period, we have to pay taxes on the 3a pillar,
         so we show in the last row (41) the total value after taxes.
+        Here we assume a 10% tax rate on the total final gain.
         """
     )
 
@@ -150,7 +151,7 @@ if __name__ == "__main__":
 
     # Taxes at the end
     gain = total_3a_result["Total Value"].iloc[-1] - total_3a_result["Total Contributions"].iloc[-1]
-    tax = gain * tax_rate  # TODO: apparently this tax rate is lower than the normal one
+    tax = gain * 0.1  # This tax rate is lower than the normal one, here we assume 10%
     total_3a_result = pd.concat(
         [
             total_3a_result,
