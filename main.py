@@ -150,7 +150,7 @@ if __name__ == "__main__":
 
     # Taxes at the end
     gain = total_3a_result["Total Value"].iloc[-1] - total_3a_result["Total Contributions"].iloc[-1]
-    tax = gain * tax_rate
+    tax = gain * tax_rate  # TODO: apparently this tax rate is lower than the normal one
     total_3a_result = pd.concat(
         [
             total_3a_result,
